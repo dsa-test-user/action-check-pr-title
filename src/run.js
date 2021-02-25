@@ -1,4 +1,5 @@
 const core = require('@actions/core');
+import * as github from "@actions/github";
 
 exports.run = () => {
   const { eventName } = github.context;
@@ -13,7 +14,7 @@ exports.run = () => {
 
   core.info(`Pull Request title: "${pullRequestTitle}"`);
 
-  const regex = RegExp(core.getInput('regexp'));
+  const regex = RegExp(core.getInput('regex'));
   if (!regex.test(pullRequestTitle)) {
     core.setFailed(`Pull Request title "${pullRequestTitle}" failed to pass match regex - ${regex}`);
   }
