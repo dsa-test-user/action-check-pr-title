@@ -2,7 +2,7 @@ name: 'Check pull request title'
 description: 'Github action to check Pull Request title based on JS Regexp'
 author: 'Slashgear_'
 inputs:
-  regexp:
+  regex:
     description: 'Regexp (as String) to validate the pull request title'
     required: false
     default: '.+'
